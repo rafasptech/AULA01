@@ -7,3 +7,30 @@ b) Ao clicar num botão "Ligar elevador"...
 c) Caso o peso seja menor que 500, exiba um alert com a frase "Elevador vai se mover"
 
 d) Caso o peso seja a partir de 500, exiba um alert com "Alguém precisa descer do elevador"  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elevador</h1>
+    Informe o peso total do Elevador: <input type="text" id="in_pesoelevador">
+    <button onclick="elevador()">Ligar elevador</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function elevador() {
+        var peso=Number(in_pesoelevador)
+        if (peso<500) {
+            div_mensagem.innerHTML = `Elevador vai se mover`
+        }
+        if (peso>500) {
+            div_mensagem.innerHTML = `Alguém precisa sair do elevador`
+        }
+    }
+</script>

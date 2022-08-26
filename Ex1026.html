@@ -4,9 +4,40 @@
 
  b) Ao clicar num botão "Verificar finanças"...
 
-b.1) Caso o saldo em conta for igual a zero (==0), exiba esta frase na cor preta na tela: "Conta zerada".
+b.1) Caso o saldo em conta for igual a zero (==0), exiba esta frase na cor preta na tela: "Conta
+ zerada".
 
 b.2) Caso o saldo seja negativo (<0), exiba esta frase na cor vermelha na tela: "Está devendo!".  
 
 b.3) Caso o saldo seja positivo (>0), exiba esta frase na cor azul: "Saldo positivo! sorriso"
  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1026</title>
+ </head>
+ <body>
+    <h1>Banco</h1>
+    Qual é o seu valor guardado em banco? <input type="text" id="in_valor"> <br>
+    <button onclick="calcular()">Calcular</button> <br>
+    <div id="div_mensagem"></div>
+ </body>
+ </html>
+ <script>
+    function calcular(){
+        var valor=Number(in_valor.value)
+        
+        if (valor == 0) {
+            div_mensagem.innerHTML=`Conta zerada!!!`
+        }
+        if (valor>0){
+            div_mensagem.innerHTML= `Saldo Positivo!!! 😉`
+        }
+        if (valor<0){
+            div_mensagem.innerHTML = `Está devendo!!! 😥`
+        }
+    }
+ </script>

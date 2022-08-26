@@ -1,34 +1,52 @@
 <!-- 11. Crie um programa o qual:
-
 a) Solicite a quantidade de filhos que o usuário tem
-
 b) Tenha um botão "Analisar família". Ao clicar nele...
-
 c) Caso tenha 1 ou mais filhos, exiba na tela, abaixo do botão, a frase
-
 Não tem TV
-
 d) Caso tenha 2 ou mais filhos, exiba na tela, abaixo da frase em c), a frase
-
 Não tem internet
-
 e) Caso tenha 3 ou mais filhos, exiba na tela, abaixo da frase em d), a frase
-
 Não tem video game
-
 f) Caso tenha 4 ou mais filhos, exiba na tela, abaixo da frase em e), a frase
-
 Não tem Netflix
-
 OBS: Ou seja, caso o usuário informe que tenha, por exemplo 4 ou mais filhos, devem aparecer as seguintes frases:
-
    Não tem TV
-
    Não tem internet
-
    Não tem video game
-
    Não tem Netflix
-
 Se tiver até 3 filhos, só não aparece a última frase, do Netflix
  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ex1126</title>
+ </head>
+ <body>
+   <h1>FILHOS</h1>
+   Quantos filhos você tem? <input type="text" id="in_filhos"> <br>
+   <button onclick="analise()">Analisar família</button>
+   <div id="div_mensagem"></div>
+
+ </body>
+ </html>
+ <script>
+   function analise(){
+      var filhos =Number(in_filhos.value)
+
+      if (filhos>=1){
+         div_mensagem.innerHTML += `<br>Não tem TV`
+      }
+      if (filhos>=2){
+         div_mensagem.innerHTML += `<br>Não tem internet`
+      }
+      if (filhos >=3){
+         div_mensagem.innerHTML += `<br>Não tem videogame`
+      }
+      if (filhos >=4){
+         div_mensagem.innerHTML += "<br>Não tem Netflix"
+      }
+   }
+ </script>

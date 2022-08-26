@@ -27,7 +27,7 @@ e)Refaça a questão anterior de tal forma que a frase do item d) apareça na co
     Informe o valor da Pizza! <input type="text" id="in_valorpizza"> <br>
     Quantos estão se reunindo? <input type="text" id="in_saotantos"> <br>
     <button onclick="rola()">Rola Pizza?</button> <br>
-    <div id="div_rolapizza"></div><br>
+    <div id="div_rolapizza"></div>
     <div id="negrito_italico" style="color:blue"></div> <br>
  </body>
  </html>
@@ -37,9 +37,11 @@ e)Refaça a questão anterior de tal forma que a frase do item d) apareça na co
         var galera = Number(in_saotantos.value)
         var dividido = valor/galera
         if(dividido<20){
-            div_rolapizza.innerHTML = `Cada um de nós pagaremos R$${dividido}`
+            div_rolapizza.innerHTML = `Cada um de nós pagaremos R$${dividido}<br>`
+            negrito_italico.innerHTML=null
         }
         else {
+            div_rolapizza.innerHTML = `Cada um de nós pagaremos R$${dividido}<br>`
             negrito_italico.innerHTML = '<b><i>Deu Ruim galera! Muito Caro</i></b>!!!'
         }
     }
