@@ -1,0 +1,36 @@
+<!-- 
+    
+7. Criar um programa que auxilie o Banco Itado a identificar quem entrou no cheque especial.
+a) Solicite o saldo da conta
+b) Solicite o valor do débito (ou seja, valor a tirar da conta)
+c) Ao clicar em "Analisar conta", calcule o novo saldo da conta e exiba a mensagem "o saldo atual da conta corrente é xx.xx". 
+Esta frase deverá estar em negrito e em vermelho somente se o saldo for menor que zero.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex0725</title>
+ </head>
+ <body>
+    <h1>Banco Itado</h1>
+    Favor informar o valor contido : <input type="text" id="in_valorinf"> <br>
+    Quanto deseja tirar mano? <input type="text" id="in_valordeb">
+    <button onclick="extrat()" >Analisar conta!</button>
+    <div id="div_info" style= "color:red"></div>
+
+ </body>
+ </html>
+ <script>
+    function extrat(){
+        var saldo=Number(in_valorinf.value)
+        var debito=Number(in_valordeb.value)
+        var saldoatual=saldo-debito
+        div_info.innerHTML = `<b>O saldo atual da conta corrente é R$${saldoatual}!</b>`
+
+    }
+ </script>

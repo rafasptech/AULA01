@@ -1,0 +1,15 @@
+.subtitulo{
+    color: green;
+}
+.titulo{
+    color: red;
+    background-color:yellow;
+}
+.container {
+    width: 80;
+}
+.title {
+    color:rgb(43, 0, 255);
+}
+
+/* "ctrl" + ";" */

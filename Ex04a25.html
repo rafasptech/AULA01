@@ -1,0 +1,46 @@
+<!-- 
+4. Um grupo de amigos costuma (ou costumava, antes do Covid19) a se reunir a casa de um deles para pedir e comer pizza. 
+Só que eles tinham um trato de que o valor da pizza, quando dividido entre os amigos, não passe de 20,00 por amigo. 
+Ajude eles criando um programa o qual:
+a) Pergunte o valor da pizza
+b) Pergunte a quantidade de amigos reunidos
+c) Ao clicar em "Rola a pizza?", calcule e exiba o valor que cada amigo vai pagar na pizza com uma frase na página como
+ esta "Cada amigo vai pagar R$X pela pizza"
+d) Somente caso o valor por amigo passe de R$20,00, exiba também a frase "Deu ruim! Pizza muito cara!"
+
+e)Refaça a questão anterior de tal forma que a frase do item d) apareça na cor de letra azul e em itálico e negrito.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ex0425</title>
+ </head>
+ <body>
+    <h1>Será que rola Pizza?</h1>
+    Vamos calcular se é possível rachar uma pizza <br>
+    Informe o valor da Pizza! <input type="text" id="in_valorpizza"> <br>
+    Quantos estão se reunindo? <input type="text" id="in_saotantos"> <br>
+    <button onclick="rola()">Rola Pizza?</button> <br>
+    <div id="div_rolapizza"></div><br>
+    <div id="negrito_italico" style="color:blue"></div> <br>
+ </body>
+ </html>
+ <script>
+    function rola(){
+        var valor = Number(in_valorpizza.value)
+        var galera = Number(in_saotantos.value)
+        var dividido = valor/galera
+        if(dividido<20){
+            div_rolapizza.innerHTML = `Cada um de nós pagaremos R$${dividido}`
+        }
+        else {
+            negrito_italico.innerHTML = '<b><i>Deu Ruim galera! Muito Caro</i></b>!!!'
+        }
+    }
+ </script>

@@ -1,0 +1,52 @@
+<!-- 8. Crie um programa que controle o peso médio dentro de um elevador:
+
+a) Solicite a quantidade de homens que entraram no elevador
+b) Solicite a quantidade de mulher que entraram no elevador
+c) Ao clicar em "Analisar peso", calcule o peso estimado sendo: homens x 80 somado com mulheres x 60
+d) Exiba na página a mensagem "Este elevador suporta 800 Kg e o peso estimado desta lotação é de xxxkg";
+e) Se o peso estimado for maior que 800, exibir também a mensagem "Será necessário descer alguém para que o elevador se movimente", 
+na cor azul.
+
+ 
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex0826</title>
+ </head>
+ <body>
+    <h1>Elevador</h1>
+    Olá, quantos homens há no elevador? <input type="text" id="in_homens"> <br>
+    Quantas mulheres há no elevador? <input type="text" id="in_mulheres"> <br>
+    <button onclick="peso()">Analisar peso</button> <br>
+    <div id="div_exibicao"></div>
+    <div id="div_peso" style="color:blue" ></div>
+    <div id="div_pesoBruto" style="color:red"></div>
+ </body>
+ </html>
+ <script>
+    function peso(){
+        var pesoHomens=Number(in_homens.value)*80
+        var pesoMulheres=Number(in_mulheres.value)*60
+        var pesoTotal=pesoHomens+pesoMulheres
+
+        if(800<pesoTotal<1000) {
+            div_exibicao.innerHTML =`Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}<br>`
+            div_peso.innerHTML =`Será Necessário qua alguém desça para que o elevador se movimente!`
+            div_pesoBruto.innerHTML=null
+        }
+        if(pesoTotal<=800) {
+            div_exibicao.innerHTML =`Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}<br>`
+            div_peso.innerHTML=null
+            div_pesoBruto.innerHTML=null
+        }
+        if(pesoTotal>=1000){
+            div_exibicao.innerHTML =`Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}<br>`
+            div_pesoBruto.innerHTML =`Será Necessário qua alguém desça para que o elevador se movimente!`
+            div_peso.innerHTML=null
+        }
+    }
+ </script>
