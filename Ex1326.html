@@ -1,11 +1,7 @@
 <!-- 13. Crie um programa o qual:
-
 a) Solicite 2 notas de um aluno
-
 b) Ao clicar em "Verificar situação", calcule sua média e...
-
 c) Caso a média seja a partir de 6, exiba um alert com "Parabéns, aprovado!"
-
 d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..."  -->
 
 <!DOCTYPE html>
@@ -20,11 +16,24 @@ d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..."  -->
 <body>
     <h1>Calculadora de média</h1>
     Informe suas notas <br>
-    1ª Nota : <input type="text" id="in_nota1">
-    2ª Nota : <input type="text" id="in_nota2">
+    1ª Nota : <input type="text" id="in_nota1"> <br>
+    2ª Nota : <input type="text" id="in_nota2"> <br>
     <button onclick="verifi()">Verificar situação</button>
     <div id="div_mensagem"></div>
 
 </body>
 </html>
-<script></script>
+<script>
+    function verifi() {
+        var nota1 = Number(in_nota1.value)
+        var nota2 = Number(in_nota2.value)
+        var media = (nota1+nota2)/2
+        if (media>=6) {
+            div_mensagem.innerHTML =`Parabéns Aprovado!`
+            
+        }
+        if (media<6) {
+            div_mensagem.innerHTML =`Tente outra vez...`
+        }
+    }
+</script>
